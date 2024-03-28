@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-const List<String> listRoutes = ["categories", "account"];
+const List<String> listRoutes = ["Notices", "account"];
 
 class BottomNavigationHome extends StatelessWidget {
   const BottomNavigationHome({

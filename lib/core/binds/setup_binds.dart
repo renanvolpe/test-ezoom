@@ -1,4 +1,4 @@
-import 'package:coolmovies/domain/logic/cubit/cubit/bottom_navigation_index_cubit.dart';
+import 'package:coolmovies/presentation/state/cubit/cubit/bottom_navigation_index_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 final binds = GetIt.I;
