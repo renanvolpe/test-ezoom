@@ -48,8 +48,19 @@ class _NoticesDetailPageState extends State<NoticesDetailPage> {
                   children: [
                     10.sizeH,
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
+                        ButtonBorderPrimary(
+                          onTap: () => context.pushNamed("notices_edit"),
+                          paddingV: 3,
+                          child: Row(
+                            children: [
+                              Text("Add News", style: Style.defaultLightTextStyle),
+                              8.sizeW,
+                              Icon(Icons.add_chart_outlined, size: 15, color: ColorsApp.kWhite),
+                            ],
+                          ),
+                        ),
+                        const Spacer(),
                         ButtonBorderPrimary(
                           onTap: () => context.pushNamed("notices_edit", extra: newsNotices),
                           paddingV: 3,

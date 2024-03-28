@@ -10,3 +10,5 @@ class DeleteNewsNoticesStarted extends DeleteNewsNoticesEvent {
     required this.id,
   });
 }
+
+class DeleteNewsNoticesReseted extends DeleteNewsNoticesEvent{}

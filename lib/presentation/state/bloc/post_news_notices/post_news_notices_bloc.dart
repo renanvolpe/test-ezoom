@@ -7,15 +7,17 @@ part 'post_news_notices_event.dart';
 part 'post_news_notices_state.dart';
 
 class PostNewsNoticesBloc extends Bloc<PostNewsNoticesEvent, PostNewsNoticesState> {
-  PostNewsNoticesBloc(NewsNoticeRepository newsNoticeRepository)
-      : super(PostNewsNoticesInitial()) {
+  PostNewsNoticesBloc(NewsNoticeRepository newsNoticeRepository) : super(PostNewsNoticesInitial()) {
     on<PostNewsNoticesStarted>((event, emit) async {
       emit(PostNewsNoticesProgress());
       var response = await newsNoticeRepository.postNewsNotices(event.newsNotices);
-     response.fold((success) {
+      response.fold((success) {
         //TODO USE CASE HERE
         emit(PostNewsNoticesSuccess("success"));
       }, (failure) => emit(PostNewsNoticesFailure(failure)));
+    });
+    on<PostNewsNoticesReseted>((event, emit) async {
+      emit(PostNewsNoticesInitial());
     });
   }
 }

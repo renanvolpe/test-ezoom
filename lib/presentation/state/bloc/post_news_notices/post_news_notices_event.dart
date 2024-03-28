@@ -10,3 +10,4 @@ class PostNewsNoticesStarted extends PostNewsNoticesEvent {
     required this.newsNotices,
   });
 }
+class PostNewsNoticesReseted extends PostNewsNoticesEvent{}

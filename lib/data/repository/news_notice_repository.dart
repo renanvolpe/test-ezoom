@@ -1,6 +1,6 @@
-import 'package:coolmovies/data/repository/dio.dart';
 import 'package:coolmovies/core/const/endpoints.dart';
 import 'package:coolmovies/data/models/news/news_notices.dart';
+import 'package:coolmovies/data/repository/dio.dart';
 import 'package:result_dart/result_dart.dart';
 
 abstract class NewsNoticeServices {
@@ -71,7 +71,7 @@ class NewsNoticeRepository implements NewsNoticeServices {
 
   @override
   Future<Result<NewsNotices, String>> updateNewsNotices(NewsNotices post) async {
-    Map<dynamic, dynamic>? body = {"title": post.title, "body": post.description};
+    Map<dynamic, dynamic>? body = {"title": post.title, "description": post.description};
 
     var response = await _request.dioPut(endpoint: "$_endpoint/${post.uuid}", body: body);
 

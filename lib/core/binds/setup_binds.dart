@@ -1,6 +1,9 @@
 import 'package:coolmovies/data/repository/dio.dart';
 import 'package:coolmovies/data/repository/news_notice_repository.dart';
+import 'package:coolmovies/presentation/state/bloc/delete_news_notices/delete_news_notices_bloc.dart';
 import 'package:coolmovies/presentation/state/bloc/get_list_new_notices/get_list_new_notices_bloc.dart';
+import 'package:coolmovies/presentation/state/bloc/post_news_notices/post_news_notices_bloc.dart';
+import 'package:coolmovies/presentation/state/bloc/put_news_notices/put_news_notices_bloc.dart';
 import 'package:coolmovies/presentation/state/cubit/cubit/bottom_navigation_index_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -18,10 +21,13 @@ class SetupBinds {
     //repositories
     binds.registerSingleton(NewsNoticeRepository(binds.get<DioClient>()));
 
-    //bloc
+    //BLOCs
     binds.registerSingleton(GetListNewNoticesBloc(binds.get<NewsNoticeRepository>()));
+    binds.registerSingleton(PutNewsNoticesBloc(binds.get<NewsNoticeRepository>()));
+    binds.registerSingleton(PostNewsNoticesBloc(binds.get<NewsNoticeRepository>()));
+    binds.registerSingleton(DeleteNewsNoticesBloc(binds.get<NewsNoticeRepository>()));
 
-    //cubits
+    //CUBITs
     binds.registerSingleton(BottomNavigationIndexCubit());
 
     // _checkBind(BottomNavigationIndexCubit());
@@ -34,10 +40,13 @@ class SetupBinds {
     binds.unregister<DioClient>();
 
     //repositories
-     binds.unregister<NewsNoticeRepository>();
+    binds.unregister<NewsNoticeRepository>();
 
     //bloc
-     binds.unregister<GetListNewNoticesBloc>();
+    binds.unregister<GetListNewNoticesBloc>();
+    binds.unregister<PutNewsNoticesBloc>();
+    binds.unregister<PostNewsNoticesBloc>();
+    binds.unregister<DeleteNewsNoticesBloc>();
 
     //cubits
     binds.unregister<BottomNavigationIndexCubit>();

@@ -8,3 +8,5 @@ class PutNewsNoticesStarted extends PutNewsNoticesEvent {
 
   PutNewsNoticesStarted({required this.newsNotices});
 }
+class PutNewsNoticesReseted extends PutNewsNoticesEvent{}
+//PutNewsNoticesReseted

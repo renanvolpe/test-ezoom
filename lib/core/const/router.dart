@@ -33,7 +33,7 @@ final router = GoRouter(debugLogDiagnostics: true, navigatorKey: _rootNavigatorK
                 GoRoute(
                   name: "notices_edit",
                   path: 'notices_edit',
-                  builder: (context, state) => AddOrEditNewsNoticePage(newsNotices: state.extra! as NewsNotices),
+                  builder: (context, state) => AddOrEditNewsNoticePage(newsNotices: state.extra as NewsNotices?),
                 ),
                 GoRoute(
                   name: "comment",
