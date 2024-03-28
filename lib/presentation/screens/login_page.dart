@@ -88,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                           Expanded(
                               child: ButtonBorderPrimary(
                                   onTap: () {
-                                    context.pushNamed("categories");
+                                    context.pushNamed("notices");
                                   },
                                   text: "Sign in"))
                         ],

@@ -1,5 +1,8 @@
 import 'package:coolmovies/presentation/screens/account_page.dart';
+import 'package:coolmovies/presentation/screens/comment_page.dart';
 import 'package:coolmovies/presentation/screens/login_page.dart';
+import 'package:coolmovies/presentation/screens/notices_detail_page.dart';
+import 'package:coolmovies/presentation/screens/notices_page.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
@@ -19,11 +22,19 @@ final router = GoRouter(debugLogDiagnostics: true, navigatorKey: _rootNavigatorK
     builder: (context, state, navigationShell) => HomePage(navigationShell: navigationShell),
     branches: [
       StatefulShellBranch(navigatorKey: _shellNavigatorAKey, routes: [
-        GoRoute(
-          name: "categories",
-          path: '/categories',
-          builder: (context, state) => const CategoriesPage(),
-        ),
+        GoRoute(name: "notices", path: '/notices', builder: (context, state) => const NoticesPage(), routes: [
+          GoRoute(
+              name: "notices_detail",
+              path: 'notices_detail',
+              builder: (context, state) => const NotivesDetailPage(),
+              routes: [
+                GoRoute(
+                  name: "comment",
+                  path: 'comment',
+                  builder: (context, state) => const CommentPage(),
+                ),
+              ]),
+        ]),
       ]),
       StatefulShellBranch(navigatorKey: _shellNavigatorBKey, routes: [
         GoRoute(
