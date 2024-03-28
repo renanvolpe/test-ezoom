@@ -1,4 +1,4 @@
-import 'package:coolmovies/core/connectivity/dio.dart';
+import 'package:coolmovies/data/repository/dio.dart';
 import 'package:coolmovies/data/models/news/news_notices.dart';
 import 'package:coolmovies/data/repository/news_notice_repository.dart';
 import 'package:dio/dio.dart';

@@ -1,4 +1,4 @@
-import 'package:coolmovies/core/connectivity/dio.dart';
+import 'package:coolmovies/data/repository/dio.dart';
 import 'package:coolmovies/data/repository/news_notice_repository.dart';
 import 'package:coolmovies/presentation/state/bloc/get_list_new_notices/get_list_new_notices_bloc.dart';
 import 'package:coolmovies/presentation/state/cubit/cubit/bottom_navigation_index_cubit.dart';

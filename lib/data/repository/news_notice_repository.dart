@@ -1,5 +1,5 @@
-import 'package:coolmovies/core/connectivity/dio.dart';
-import 'package:coolmovies/core/endpoints.dart';
+import 'package:coolmovies/data/repository/dio.dart';
+import 'package:coolmovies/core/const/endpoints.dart';
 import 'package:coolmovies/data/models/news/news_notices.dart';
 import 'package:result_dart/result_dart.dart';
 

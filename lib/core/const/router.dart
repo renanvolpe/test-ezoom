@@ -1,4 +1,6 @@
+import 'package:coolmovies/data/models/news/news_notices.dart';
 import 'package:coolmovies/presentation/screens/account_page.dart';
+import 'package:coolmovies/presentation/screens/add_or_edit_news_notice_page.dart';
 import 'package:coolmovies/presentation/screens/comment_page.dart';
 import 'package:coolmovies/presentation/screens/login_page.dart';
 import 'package:coolmovies/presentation/screens/notices_detail_page.dart';
@@ -6,7 +8,7 @@ import 'package:coolmovies/presentation/screens/notices_page.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
-import '../presentation/screens/home_page.dart';
+import '../../presentation/screens/home_page.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorAKey = GlobalKey<NavigatorState>(debugLabel: 'shellA');
@@ -26,8 +28,13 @@ final router = GoRouter(debugLogDiagnostics: true, navigatorKey: _rootNavigatorK
           GoRoute(
               name: "notices_detail",
               path: 'notices_detail',
-              builder: (context, state) => const NotivesDetailPage(),
+              builder: (context, state) => NoticesDetailPage(newsNotices: state.extra! as NewsNotices),
               routes: [
+                GoRoute(
+                  name: "notices_edit",
+                  path: 'notices_edit',
+                  builder: (context, state) => AddOrEditNewsNoticePage(newsNotices: state.extra! as NewsNotices),
+                ),
                 GoRoute(
                   name: "comment",
                   path: 'comment',

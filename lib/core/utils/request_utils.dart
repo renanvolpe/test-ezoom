@@ -1,4 +1,4 @@
-import 'package:coolmovies/core/endpoints.dart';
+import 'package:coolmovies/core/const/endpoints.dart';
 import 'package:dio/dio.dart';
 
 class RequestUtils {

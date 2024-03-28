@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:coolmovies/core/connectivity/utils.dart';
-import 'package:coolmovies/core/logger.dart';
+import 'package:coolmovies/core/utils/request_utils.dart';
+import 'package:coolmovies/core/const/logger.dart';
 import 'package:dio/dio.dart';
 import 'package:result_dart/result_dart.dart';
 

@@ -24,7 +24,7 @@ class NewsNotices {
   });
 
   factory NewsNotices.empty() =>
-      NewsNotices(uuid: "", datetimePost: "2024-03-19T13:15:00Z", description: "New description", photo: "", title: "title", wasRead: false);
+      NewsNotices(uuid: "", datetimePost: "2024-03-19T13:15:00Z", description: "", photo: "", title: "", wasRead: false);
 
   factory NewsNotices.fromJson(Map<String, dynamic> json) => _$NewsNoticesFromJson(json);
 

@@ -1,6 +1,6 @@
-import 'package:coolmovies/core/colors_app.dart';
+import 'package:coolmovies/core/style/colors_app.dart';
 import 'package:coolmovies/core/extensions/resumed_sizedbox.dart';
-import 'package:coolmovies/core/style.dart';
+import 'package:coolmovies/core/style/style.dart';
 import 'package:coolmovies/presentation/commum_widgets/defaults/buttons_rounded.dart';
 import 'package:coolmovies/presentation/commum_widgets/defaults/textfield_decoration.dart';
 import 'package:flutter/material.dart';

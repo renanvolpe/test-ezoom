@@ -1,4 +1,4 @@
-import 'package:coolmovies/core/router.dart';
+import 'package:coolmovies/core/const/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

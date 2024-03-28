@@ -1,5 +1,5 @@
-import 'package:coolmovies/core/colors_app.dart';
-import 'package:coolmovies/core/style.dart';
+import 'package:coolmovies/core/style/colors_app.dart';
+import 'package:coolmovies/core/style/style.dart';
 import 'package:coolmovies/data/models/news/news_notices.dart';
 import 'package:coolmovies/presentation/commum_widgets/defaults/image_default.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +17,7 @@ class ButtonImageAndTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: () => context.pushNamed("notices_detail"),
+        onTap: () => context.pushNamed("notices_detail", extra: news),
         child: Stack(
           children: [
             ImageDefault(
@@ -33,7 +33,7 @@ class ButtonImageAndTitle extends StatelessWidget {
                 widthFactor: 1,
                 child: Container(
                   alignment: Alignment.center,
-                  color: ColorsApp.kGrey,
+                  color: ColorsApp.kPrimary,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
                     child: Text(
