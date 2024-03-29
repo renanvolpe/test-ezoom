@@ -148,7 +148,9 @@ class _NoticesPageState extends State<NoticesPage> {
               child: Container(
                   color: Colors.white,
                   child: TextFormField(
-                    decoration: textfieldDecorationDefault(hintText: "Search category here", endIcon: Icons.search),
+                    onChanged: (value) =>
+                        binds.get<GetListNewNoticesBloc>().add(GetListNewNoticesFiltredByTitle(text: value)),
+                    decoration: textfieldDecorationDefault(hintText: "Search by Title here", endIcon: Icons.search),
                   )),
             ),
           ],

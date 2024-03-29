@@ -8,16 +8,16 @@ part of 'comments.dart';
 
 Comments _$CommentsFromJson(Map<String, dynamic> json) => Comments(
       uuid: json['_uuid'] as String,
-      idNews: json['idNews'] as String,
+      comment: json['comment'] as String,
+      dateTime: json['datetime_post'] as String,
       name: json['name'] as String,
-      email: json['email'] as String,
-      body: json['body'] as String,
+      idNews: json['idNews'] as String,
     );
 
 Map<String, dynamic> _$CommentsToJson(Comments instance) => <String, dynamic>{
       '_uuid': instance.uuid,
-      'idNews': instance.idNews,
+      'comment': instance.comment,
+      'datetime_post': instance.dateTime,
       'name': instance.name,
-      'email': instance.email,
-      'body': instance.body,
+      'idNews': instance.idNews,
     };

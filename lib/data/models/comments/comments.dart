@@ -7,21 +7,23 @@ part 'comments.g.dart';
 class Comments {
   @JsonKey(name: "_uuid")
   String uuid;
-  String idNews;
+  String comment;
+  @JsonKey(name: 'datetime_post')
+  String dateTime;
   String name;
-  String email;
-  String body;
- 
+  String idNews;
   Comments({
     required this.uuid,
-    required this.idNews,
+    required this.comment,
+    required this.dateTime,
     required this.name,
-    required this.email,
-    required this.body,
+    required this.idNews,
   });
- factory Comments.fromJson(Map<String, dynamic> json) =>
-      _$CommentsFromJson(json);
+
+  factory Comments.empty(String idNews) => Comments(comment: "", dateTime: "", name: "", idNews: idNews, uuid: '');
+  factory Comments.example(String idNews) => Comments(comment: "Comments here", dateTime: "", name: "Name", idNews: idNews, uuid: '');
+
+  factory Comments.fromJson(Map<String, dynamic> json) => _$CommentsFromJson(json);
 
   Map<String, dynamic> toJson() => _$CommentsToJson(this);
 }
-
