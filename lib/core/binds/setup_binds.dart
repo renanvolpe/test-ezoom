@@ -1,3 +1,4 @@
+import 'package:coolmovies/data/repository/comments_repository.dart';
 import 'package:coolmovies/data/repository/dio.dart';
 import 'package:coolmovies/data/repository/news_notice_repository.dart';
 import 'package:coolmovies/presentation/state/bloc/delete_news_notices/delete_news_notices_bloc.dart';
@@ -32,6 +33,24 @@ class SetupBinds {
 
     // _checkBind(BottomNavigationIndexCubit());
   }
+
+  //when notices started
+   static void setupBindsComments(String idNews) {
+    //dio and dependencies
+  
+
+    //repositories
+    binds.registerSingleton(CommentsRepository(binds.get<DioClient>(), idNews));
+
+    //BLOCs
+    
+
+    //CUBITs
+
+    // _checkBind(BottomNavigationIndexCubit());
+  }
+
+  static void disposeBindsComments(){}
 
   static void disposeBindsHome() {
     //dio and dependencies

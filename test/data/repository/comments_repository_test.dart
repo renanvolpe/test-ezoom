@@ -18,9 +18,9 @@ void main() {
     commentsRepository = CommentsRepository(dioCliente, idNews);
   });
 
-  group("teste repository public place holder :: POSTS", () {
+  group("test repository comments ", () {
     late Comments commentTest;
-    test("get list comments", () async {
+    test("Get list comments", () async {
       var response = await commentsRepository.getListComments();
 
       expect(response, isA<Success>());

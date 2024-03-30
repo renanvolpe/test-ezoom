@@ -6,6 +6,7 @@ import 'package:coolmovies/data/models/news/news_notices.dart';
 import 'package:coolmovies/presentation/commum_widgets/defaults/appbar_back_btn.dart';
 import 'package:coolmovies/presentation/commum_widgets/defaults/buttons_rounded.dart';
 import 'package:coolmovies/presentation/commum_widgets/defaults/image_default.dart';
+import 'package:coolmovies/presentation/commum_widgets/widgets/comments_notices.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -119,19 +120,3 @@ class _NoticesDetailPageState extends State<NoticesDetailPage> {
   }
 }
 
-class CommentariesNotice extends StatelessWidget {
-  const CommentariesNotice({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [Text("Comments:", style: Style.defaultTextStyle.copyWith(fontSize: 22))],
-        ),
-      ],
-    );
-  }
-}
