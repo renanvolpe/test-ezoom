@@ -32,91 +32,94 @@ class _NoticesDetailPageState extends State<NoticesDetailPage> {
         appBar: AppbarDefaultJustBackBtn(context),
         backgroundColor: ColorsApp.kWhite,
         body: LayoutBuilder(builder: (context, constraints) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: constraints.maxHeight * 0.45,
-                child: ImageDefault(
-                  url: newsNotices.photo,
-                  fit: BoxFit.fill,
+          return SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: constraints.maxHeight * 0.45,
+                  child: ImageDefault(
+                    url: newsNotices.photo,
+                    fit: BoxFit.fill,
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    10.sizeH,
-                    Row(
-                      children: [
-                        ButtonBorderPrimary(
-                          onTap: () => context.pushNamed("notices_edit"),
-                          paddingV: 3,
-                          child: Row(
-                            children: [
-                              Text("Add News", style: Style.defaultLightTextStyle),
-                              8.sizeW,
-                              Icon(Icons.add_chart_outlined, size: 15, color: ColorsApp.kWhite),
-                            ],
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      10.sizeH,
+                      Row(
+                        children: [
+                          ButtonBorderPrimary(
+                            onTap: () => context.pushNamed("notices_edit"),
+                            paddingV: 3,
+                            child: Row(
+                              children: [
+                                Text("Add News", style: Style.defaultLightTextStyle),
+                                8.sizeW,
+                                Icon(Icons.add_chart_outlined, size: 15, color: ColorsApp.kWhite),
+                              ],
+                            ),
                           ),
-                        ),
-                        const Spacer(),
-                        ButtonBorderPrimary(
-                          onTap: () => context.pushNamed("notices_edit", extra: newsNotices),
-                          paddingV: 3,
-                          child: Row(
-                            children: [
-                              Text("Edit/Remove", style: Style.defaultLightTextStyle),
-                              8.sizeW,
-                              Icon(Icons.edit, size: 15, color: ColorsApp.kWhite),
-                            ],
+                          const Spacer(),
+                          ButtonBorderPrimary(
+                            onTap: () => context.pushNamed("notices_edit", extra: newsNotices),
+                            paddingV: 3,
+                            child: Row(
+                              children: [
+                                Text("Edit/Remove", style: Style.defaultLightTextStyle),
+                                8.sizeW,
+                                Icon(Icons.edit, size: 15, color: ColorsApp.kWhite),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                      10.sizeH,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              newsNotices.title,
+                              textAlign: TextAlign.center,
+                              style: Style.defaultTextStyle.copyWith(fontSize: 22),
+                            ),
                           ),
-                        )
-                      ],
-                    ),
-                    10.sizeH,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            newsNotices.title,
-                            textAlign: TextAlign.center,
-                            style: Style.defaultTextStyle.copyWith(fontSize: 22),
+                        ],
+                      ),
+                      15.sizeH,
+                      Text(
+                        "Description: ${newsNotices.description}",
+                        style: Style.defaultTextStyle.copyWith(fontSize: 14),
+                      ),
+                      15.sizeH,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            "Post date: ${DateTimeUtils.formatDate(newsNotices.datetimePost)}",
+                            style: Style.defaultTextStyle.copyWith(fontSize: 15),
                           ),
-                        ),
-                      ],
-                    ),
-                    15.sizeH,
-                    Text(
-                      "Description: ${newsNotices.description}",
-                      style: Style.defaultTextStyle.copyWith(fontSize: 14),
-                    ),
-                    15.sizeH,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Post date: ${DateTimeUtils.formatDate(newsNotices.datetimePost)}",
-                          style: Style.defaultTextStyle.copyWith(fontSize: 15),
-                        ),
-                        5.sizeW,
-                        Text(
-                          "- ${DateTimeUtils.formatTime(newsNotices.datetimePost)}",
-                          style: Style.defaultTextStyle.copyWith(fontSize: 15),
-                        ),
-                      ],
-                    ),
-                    15.sizeH,
-                    const CommentariesNotice(),
-                    10.sizeH,
-                  ],
+                          5.sizeW,
+                          Text(
+                            "- ${DateTimeUtils.formatTime(newsNotices.datetimePost)}",
+                            style: Style.defaultTextStyle.copyWith(fontSize: 15),
+                          ),
+                        ],
+                      ),
+                      15.sizeH,
+                      CommentariesNotice(
+                        idNews: newsNotices.uuid,
+                      ),
+                      10.sizeH,
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           );
         }));
   }
 }
-
