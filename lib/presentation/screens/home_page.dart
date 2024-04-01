@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:coolmovies/core/binds/setup_binds.dart';
 import 'package:coolmovies/presentation/commum_widgets/widgets/bottom_navigation_home.dart';
+import 'package:coolmovies/presentation/commum_widgets/widgets/return_page_show_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -31,13 +32,17 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationHome(child: widget.navigationShell),
-      body: widget.navigationShell,
-      // [
-      //   NoticesPage(),
-      //   AccountPage()
-      // ]
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (didPop) => returnPageShowDialog(context),
+      child: Scaffold(
+        bottomNavigationBar: BottomNavigationHome(child: widget.navigationShell),
+        body: SafeArea(child: widget.navigationShell),
+        // [
+        //   NoticesPage(),
+        //   AccountPage()
+        // ]
+      ),
     );
   }
 }
