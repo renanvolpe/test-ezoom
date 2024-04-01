@@ -1,4 +1,4 @@
-import 'package:coolmovies/core/colors_app.dart';
+import 'package:coolmovies/core/style/colors_app.dart';
 import 'package:flutter/material.dart';
 
 

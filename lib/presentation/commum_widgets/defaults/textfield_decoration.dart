@@ -1,5 +1,5 @@
-import 'package:coolmovies/core/colors_app.dart';
-import 'package:coolmovies/core/style.dart';
+import 'package:coolmovies/core/style/colors_app.dart';
+import 'package:coolmovies/core/style/style.dart';
 import 'package:flutter/material.dart';
 
 InputDecoration textfieldDecorationDefault(
@@ -9,13 +9,14 @@ InputDecoration textfieldDecorationDefault(
     void Function()? iconFuncition,
     IconData? prefixIcon}) {
   return InputDecoration(
+    
     contentPadding: const EdgeInsets.symmetric(horizontal: 10),
     filled: true,
     fillColor: Colors.white,
     hintText: hintText,
     hintStyle: Style.hintTextStyle,
     enabledBorder: OutlineInputBorder(
-        borderSide: const BorderSide(width: 1, color: Color(0xFFBCC4D6)), borderRadius: BorderRadius.circular(8)),
+        borderSide: BorderSide(width: 1, color: ColorsApp.kPrimary), borderRadius: BorderRadius.circular(8)),
     focusedBorder: OutlineInputBorder(
         borderSide: const BorderSide(width: 2, color: Color(0xFFBCC4D6)), borderRadius: BorderRadius.circular(8)),
     border: OutlineInputBorder(
@@ -26,7 +27,7 @@ InputDecoration textfieldDecorationDefault(
       fontSize: 18.5,
       fontWeight: FontWeight.w400,
     ),
-    suffixIcon: endIcon != null ? Icon(endIcon, color: ColorsApp.kGrey) : null,
-    prefixIcon: prefixIcon != null ? Icon(prefixIcon, color: ColorsApp.kGrey) : null,
+    suffixIcon: endIcon != null ? Icon(endIcon, color: ColorsApp.kPrimary) : null,
+    prefixIcon: prefixIcon != null ? Icon(prefixIcon, color: ColorsApp.kPrimary) : null,
   );
 }

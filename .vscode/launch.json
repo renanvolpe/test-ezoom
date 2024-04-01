@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "coolmovies-mobile",
+            "name": "test-ezoom",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "coolmovies-mobile (profile mode)",
+            "name": "test-ezoom (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "coolmovies-mobile (release mode)",
+            "name": "test-ezoom (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
