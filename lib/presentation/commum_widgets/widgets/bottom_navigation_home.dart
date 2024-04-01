@@ -4,7 +4,6 @@ import 'package:coolmovies/core/style/style.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-const List<String> listRoutes = ["Notices", "account"];
 
 class BottomNavigationHome extends StatelessWidget {
   const BottomNavigationHome({
@@ -23,7 +22,7 @@ class BottomNavigationHome extends StatelessWidget {
         currentIndex: child.currentIndex,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: "Notices"),
-          BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: "Account")
+          BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: "Resume")
         ]);
   }
 }

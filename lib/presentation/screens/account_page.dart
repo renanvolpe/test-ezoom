@@ -19,7 +19,7 @@ class AccountPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("I´m Mobile developer with Flutter", style: Style.defaultTextStyle.copyWith(fontSize: 14)),
-                Text("I have been working with mobile for 3 years",
+                Text("I have been working with mobile for almost 3 years",
                     style: Style.defaultTextStyle.copyWith(fontSize: 14)),
               ],
             ),
