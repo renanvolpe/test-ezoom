@@ -4,11 +4,19 @@ part of 'delete_comments_bloc.dart';
 sealed class DeleteCommentsState {}
 
 final class DeleteCommentsInitial extends DeleteCommentsState {}
-final class DeleteCommentsProgress extends DeleteCommentsState {}
+
+final class DeleteCommentsProgress extends DeleteCommentsState {
+  final String id;
+
+  DeleteCommentsProgress(this.id);
+
+}
+
 final class DeleteCommentsSuccess extends DeleteCommentsState {
   final String message;
   DeleteCommentsSuccess(this.message);
 }
+
 final class DeleteCommentsFailure extends DeleteCommentsState {
   final String message;
   DeleteCommentsFailure(this.message);

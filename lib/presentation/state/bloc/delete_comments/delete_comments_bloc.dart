@@ -9,7 +9,7 @@ class DeleteCommentsBloc extends Bloc<DeleteCommentsEvent, DeleteCommentsState> 
   DeleteCommentsBloc(CommentsRepository commentsRepository)
       : super(DeleteCommentsInitial()) {
     on<DeleteCommentsStarted>((event, emit) async {
-      emit(DeleteCommentsProgress());
+      emit(DeleteCommentsProgress(event.id));
       var response = await commentsRepository.deleteComment(event.id);
      response.fold((success) {
         //TODO USE CASE HERE

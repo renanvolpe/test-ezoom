@@ -174,7 +174,7 @@ class _AddOrEditNewsNoticePageState extends State<AddOrEditNewsNoticePage> {
                             ],
                           ),
                           15.sizeH,
-                          Text("Decription:", style: Style.defaultTextStyle),
+                          Text("Description:", style: Style.defaultTextStyle),
                           3.sizeH,
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
